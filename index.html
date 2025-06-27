@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GExSent: Gated Experts for Robust Sentiment Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center;
+        }
+        .section-subtitle {
+            @apply text-lg text-gray-500 mb-12 text-center max-w-3xl mx-auto;
+        }
+        .card {
+            @apply bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+        }
+        .btn {
+            @apply inline-block text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105;
+        }
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-700/50;
+        }
+        .btn-secondary {
+             @apply bg-gray-700 hover:bg-gray-800 shadow-lg hover:shadow-gray-800/50;
+        }
+        h2 {
+            @apply text-2xl font-semibold text-gray-800 mb-4;
+        }
+        h3 {
+             @apply text-xl font-semibold text-gray-800 mt-6 mb-3;
+        }
+        .nav-link {
+             @apply text-gray-600 hover:text-blue-600 transition-colors duration-300 pb-1 border-b-2 border-transparent hover:border-blue-600;
+        }
+        .highlight {
+            @apply text-blue-600 font-bold;
+        }
+        .team-member img {
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .team-member:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">GExSent</h1>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#abstract" class="nav-link">Abstract</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#team" class="nav-link">The Team</a>
+                <a href="https://github.com/Subhanshusethi/GExSENT-MOE.git" target="_blank" rel="noopener noreferrer" class="btn btn-secondary text-sm py-2 px-4">
+                    <i class="fab fa-github mr-2"></i>Code
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#abstract" class="block text-gray-600 hover:text-blue-600">Abstract</a>
+            <a href="#architecture" class="block text-gray-600 hover:text-blue-600">Architecture</a>
+            <a href="#results" class="block text-gray-600 hover:text-blue-600">Results</a>
+            <a href="#team" class="block text-gray-600 hover:text-blue-600">The Team</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative text-center overflow-hidden bg-white">
+        <div class="container mx-auto px-6 py-20 md:py-28 z-10 relative">
+            <p class="text-blue-600 font-semibold mb-2">A NOVEL FRAMEWORK FOR MULTIMODAL SENTIMENT ANALYSIS</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                GExSent: Gated Experts for Robust Sentiment Analysis
+            </h1>
+            <p class="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
+                Published at the International Joint Conference on Neural Networks (IJCNN)
+            </p>
+            <div class="flex justify-center items-center space-x-4">
+                <a href="#paper-link" class="btn btn-primary">
+                    <i class="fas fa-file-pdf mr-2"></i>Read The Paper
+                </a>
+                 <a href="https://github.com/Subhanshusethi/GExSENT-MOE.git" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class="fab fa-github mr-2"></i>View Code
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-grid-gray-200/50 [mask-image:linear-gradient(to_bottom,white_50%,transparent_100%)] z-0"></div>
+    </main>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Abstract</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-lg border border-gray-200">
+                <p class="text-lg leading-relaxed text-gray-700">
+                    The field of multimodal sentiment analysis has gained huge attention through its broad applications in different forms of communication. In this study, a novel architecture, <span class="highlight">GExSent</span>, is proposed that combines the powerful encoding capabilities of <span class="highlight">CLIP</span> and <span class="highlight">Modern BERT</span>. Furthermore, it introduces two feature enhancement modules—<span class="highlight">Hierarchical Gated Mixture of Experts (H-GMoE)</span> and a <span class="highlight">Gated Attention Mechanism (GAM)</span>—to support task-specific learning and enhance the relevance of multimodal features. Experimental results on benchmark datasets, including MOSI, MOSEI, and Memotion, demonstrate superior performance when compared to current state-of-the-art methods.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">The GExSent Architecture</h2>
+            <p class="section-subtitle">
+                Our model intelligently fuses visual and textual data through a three-stage framework, ensuring that the most relevant information is prioritized for accurate sentiment prediction.
+            </p>
+            <div class="card max-w-6xl mx-auto p-8">
+                <h3 class="text-center">Fig 1: GExSent Full Architecture</h3>
+                <p class="text-center text-gray-500 mb-6">This diagram shows the end-to-end flow from unimodal inputs to the final classification head.</p>
+                <!-- HOW TO PUT YOUR IMAGE: Replace the src="..." with the path to your image file. -->
+                <img src="https://i.imgur.com/G5n4qYV.jpeg" alt="GExSent Architecture Diagram" class="w-full rounded-md shadow-lg border" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/e0f2fe/1e40af?text=GExSent+Architecture';">
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-10 text-left">
+                    <div class="border-l-4 border-blue-500 pl-6">
+                        <h3 class="font-bold text-blue-800">1. Unimodal Representation</h3>
+                        <p>We leverage powerful pre-trained models: <span class="font-semibold">CLIP</span> extracts robust visual features, while <span class="font-semibold">Modern BERT</span> captures deep contextual understanding from text.</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-6">
+                        <h3 class="font-bold text-green-800">2. Hierarchical Gated MoE</h3>
+                        <p>This module acts as an intelligent filter, selecting the most informative "expert" tokens from each modality and reducing noise for cleaner feature representation.</p>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h3 class="font-bold text-purple-800">3. Gated Attention (GAM)</h3>
+                        <p>GAM dynamically modulates the interaction between modalities, applying adaptive gates to ensure the final representation is context-aware and robust.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                     <div class="card p-4">
+                        <h3 class="text-center text-md">Fig 2: Gating Mechanism</h3>
+                        <!-- HOW TO PUT YOUR IMAGE: Replace the src="..." with the path to your image file. -->
+                        <img src="https://placehold.co/600x450/e0f2fe/1e40af?text=Fig+2:+Gating+Mechanism" alt="Gating Mechanism" class="w-full rounded-md shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/600x450/e0f2fe/1e40af?text=Gating+Mechanism';">
+                     </div>
+                     <div class="card p-4">
+                        <h3 class="text-center text-md">Fig 3: Gated Attention</h3>
+                        <!-- HOW TO PUT YOUR IMAGE: Replace the src="..." with the path to your image file. -->
+                        <img src="https://placehold.co/600x450/e0f2fe/1e40af?text=Fig+3:+Gated+Attention" alt="Gated Attention Mechanism" class="w-full rounded-md shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/600x450/e0f2fe/1e40af?text=Gated+Attention';">
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Experimental Results</h2>
+            <p class="section-subtitle">
+                We benchmarked GExSent on three standard datasets. Our model achieves state-of-the-art results on several key metrics, demonstrating its effectiveness and efficiency.
+            </p>
+            
+            <div class="card p-8 mb-10">
+                <h3 class="text-center">Results Visualization</h3>
+                <p class="text-center text-gray-500 mb-6">This chart illustrates the performance of GExSent against other SOTA models on key metrics.</p>
+                <!-- HOW TO PUT YOUR IMAGE: Replace the src="..." with a path to your chart/graph image. -->
+                <img src="https://placehold.co/1200x400/e0f2fe/1e40af?text=Performance+Chart+Placeholder" alt="Performance Chart" class="w-full rounded-md shadow-lg border" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/e0f2fe/1e40af?text=Performance+Chart';">
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div class="card p-8">
+                    <h3 class="text-center">Performance on MOSI & MOSEI</h3>
+                    <div class="overflow-x-auto mt-4">
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Metric</th>
+                                    <th class="py-3 px-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">MOSI</th>
+                                    <th class="py-3 px-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">MOSEI</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="text-center">
+                                    <td class="py-3 px-4 font-semibold text-left">MAE <i class="fas fa-arrow-down text-red-500"></i></td>
+                                    <td class="py-3 px-4">0.865</td>
+                                    <td class="py-3 px-4">0.632</td>
+                                </tr>
+                                <tr class="text-center bg-gray-50">
+                                    <td class="py-3 px-4 font-semibold text-left">Corr <i class="fas fa-arrow-up text-green-500"></i></td>
+                                    <td class="py-3 px-4">0.721</td>
+                                    <td class="py-3 px-4"><span class="font-bold text-green-600 bg-green-100 py-1 px-2 rounded-md">0.780</span></td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td class="py-3 px-4 font-semibold text-left">Acc-7 <i class="fas fa-arrow-up text-green-500"></i></td>
+                                    <td class="py-3 px-4"><span class="font-bold text-green-600 bg-green-100 py-1 px-2 rounded-md">47.25</span></td>
+                                    <td class="py-3 px-4">52.10</td>
+                                </tr>
+                                <tr class="text-center bg-gray-50">
+                                    <td class="py-3 px-4 font-semibold text-left">Acc-2 <i class="fas fa-arrow-up text-green-500"></i></td>
+                                    <td class="py-3 px-4">83.12 / <span class="font-bold text-green-600">87.13</span></td>
+                                    <td class="py-3 px-4">83.12 / <span class="font-bold text-green-600">88.90</span></td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td class="py-3 px-4 font-semibold text-left">F1-Score <i class="fas fa-arrow-up text-green-500"></i></td>
+                                    <td class="py-3 px-4">83.22 / <span class="font-bold text-green-600">87.24</span></td>
+                                    <td class="py-3 px-4"><span class="font-bold text-green-600">83.78</span> / 85.11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card p-8">
+                    <h3 class="text-center">Performance on Memotion 7k</h3>
+                     <div class="overflow-x-auto mt-4">
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="py-3 px-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Model</th>
+                                    <th class="py-3 px-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">Macro F1 <i class="fas fa-arrow-up text-green-500"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="text-center">
+                                    <td class="py-3 px-4 text-left">DINOV2*</td>
+                                    <td class="py-3 px-4 font-bold text-green-600">0.3552</td>
+                                </tr>
+                                <tr class="text-center bg-blue-50">
+                                    <td class="py-3 px-4 font-bold text-blue-800 text-left">Ours (GExSent)</td>
+                                    <td class="py-3 px-4 font-bold text-blue-800">0.3453</td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td class="py-3 px-4 text-left">Vkeswani IITK</td>
+                                    <td class="py-3 px-4">0.3546</td>
+                                </tr>
+                                 <tr class="text-center bg-gray-50">
+                                    <td class="py-3 px-4 text-left">Guoym</td>
+                                    <td class="py-3 px-4">0.3519</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p class="mt-6 text-sm text-center bg-gray-100 p-4 rounded-lg">Our model is highly competitive while remaining computationally efficient with only <span class="font-bold">9M trainable parameters</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Meet The Team</h2>
+            <p class="section-subtitle">This research is the result of a collaborative effort by a dedicated team of students and faculty from Delhi Technological University.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <!-- HOW TO CUSTOMIZE TEAM MEMBERS:
+                     1. Replace the placeholder image src `https://placehold.co/...` with a link to your photo.
+                     2. Change the "Author Name".
+                     3. Change the href="..." in the social links to your actual profile URLs.
+                     4. Repeat for each team member. You can copy-paste a whole `div` for a new member.
+                -->
+                <!-- Team Member 1 -->
+                <div class="team-member text-center">
+                    <img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/a3e635/4d7c0f?text=SS" alt="Subhanshu Sethi">
+                    <h4 class="font-bold text-lg text-gray-800">Subhanshu Sethi</h4>
+                    <p class="text-sm text-gray-500">Lead Author</p>
+                    <div class="mt-3 space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fas fa-globe"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member text-center">
+                    <img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/67e8f9/0e7490?text=CD" alt="Chhavi Dhiman">
+                    <h4 class="font-bold text-lg text-gray-800">Chhavi Dhiman</h4>
+                    <p class="text-sm text-gray-500">Author</p>
+                     <div class="mt-3 space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fas fa-globe"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member text-center">
+                    <img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/f9a8d4/9d2664?text=DS" alt="Divij Saini">
+                    <h4 class="font-bold text-lg text-gray-800">Divij Saini</h4>
+                    <p class="text-sm text-gray-500">Author</p>
+                     <div class="mt-3 space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fas fa-globe"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="team-member text-center">
+                    <img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/fde047/854d0e?text=SS" alt="Sarthak Singh">
+                    <h4 class="font-bold text-lg text-gray-800">Sarthak Singh</h4>
+                    <p class="text-sm text-gray-500">Author</p>
+                     <div class="mt-3 space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fas fa-globe"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="team-member text-center">
+                    <img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/a78bfa/5b21b6?text=BB" alt="Bharat Bhushan">
+                    <h4 class="font-bold text-lg text-gray-800">Bharat Bhushan</h4>
+                    <p class="text-sm text-gray-500">Advisor</p>
+                     <div class="mt-3 space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fas fa-globe"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-blue-600 text-white p-10 rounded-xl shadow-2xl shadow-blue-500/50">
+                <h2 class="text-3xl font-bold mb-4 text-center">Conclusion & Future Work</h2>
+                <p class="text-lg leading-relaxed text-blue-100 mb-4 text-center">
+                   Our work introduces a significant step toward more adaptive and interpretable multimodal sentiment analysis. By using <span class="font-semibold">H-GMOE</span> and <span class="font-semibold">GAM</span>, GExSent dynamically adapts to the significance of each modality.
+                </p>
+                 <p class="text-lg leading-relaxed text-blue-100 text-center">
+                   Future work will explore extending these capabilities to finer-grained emotion classification and incorporating additional modalities such as audio.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-2">GExSent</h2>
+            <p class="text-gray-400 mb-8">Changing how machines understand emotion.</p>
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <a href="#paper-link" class="btn btn-primary">
+                    <i class="fas fa-file-alt mr-2"></i>Download Paper
+                </a>
+                 <a href="https://github.com/Subhanshusethi/GExSENT-MOE.git" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class="fab fa-github mr-2"></i>View on GitHub
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2024 Subhanshu Sethi & Team. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
